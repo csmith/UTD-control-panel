@@ -1,0 +1,5 @@
+RewriteEngine On
+
+RewriteRule ^([a-z0-9]+)$ /control/$1.php [L]
+RewriteRule ^([a-z]+)/([0-9]+)$ /control/$1.php?n=$2 [L]
+RewriteRule ^([a-z]+)/([0-9]+)/(.*?)$ /control/$1.php?n=$2&f=$3 [L]

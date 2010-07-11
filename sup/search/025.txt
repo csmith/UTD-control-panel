@@ -1,0 +1,15 @@
+Downtime promise
+
+
+ While we'd all like to have 100% uptime, in practice this rarely happens.
+ In order to compensate our customers for any downtime we experience, 
+ UTD-Hosting will issue discount codes that extend the current billing cycle
+ by twice the length of the downtime. So if we're down for an hour,
+ you get two hours for free.
+
+
+ After a period of downtime, an informational message will be posted by a 
+ UTD-Hosting staff member, explaining the cause of the downtime, the recorded
+ duration, and listing the discount code. This code will be valid for a week
+ after the end of the downtime.
+ 

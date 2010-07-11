@@ -1,0 +1,16 @@
+How do I configure PHP for my site?
+
+
+ The UTD-Hosting control panel allows you to configure various PHP options
+ for each of your sites. To do this, you must login to the UTD-Hosting control
+ panel, and perform the following actions:
+ 
+
+ Access the site overview page
+ Click on the settings link next to the site you wish to edit
+ Scroll down to the PHP Settings section
+
+
+ Once you have finished changing the settings, click the save button
+ at the bottom of the page. Please note that it may take up to five minutes for
+ some changes to become active.

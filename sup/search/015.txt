@@ -1,0 +1,14 @@
+What does 'document root' mean?
+
+
+ The document root of a site is the directory in which the site
+ resides. When your account is created, your default site (with the domain
+ name username.utd-hosting.com) has a document root of 
+ /public_html. When you connect to your FTP account, you will see the
+ public_html directory. Any files you upload to that directory will be visible
+ via your website.
+
+
+ When you add a new site, you need to put in a new document root. Generally,
+ you will want to create a new directory for this site (using your FTP client),
+ and set the document root to that directory.

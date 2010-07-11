@@ -1,0 +1,13 @@
+Can I file support requests without using the control panel?
+
+
+ You can file support requests by sending e-mail to
+ support@utd-hosting.com. Note that when you submit support requests
+ via e-mail, they are exempt from our reply time promise.
+ Please make sure that you include your UTD-Hosting username with your query.
+ For certain requests we may require that you log into the control panel to
+ verify your identity.
+
+
+ UTD-Hosting will never ask for your password by e-mail or any other method of
+ communication.

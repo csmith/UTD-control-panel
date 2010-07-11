@@ -1,0 +1,15 @@
+How to raise a ticket
+
+UTD-Hosting's primary method of support is via our ticket system. To raise
+ a new ticket, follow the following steps:
+
+ Log in to the control panel
+ Click on 'Tickets' in the main menu, or 'View or raise tickets' in the 
+  sidebar
+ At the bottom of the tickets page, enter a subject and message
+ Press the 'Raise new ticket' button
+ Your ticket has been raised, and it will now be displayed
+
+
+ If you have problems raising a ticket, you can contact UTD-Hosting support
+ by e-mail.

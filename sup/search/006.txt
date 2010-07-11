@@ -1,0 +1,12 @@
+Can I give other users access to the control panel?
+
+
+ We currently have no plans to allow multiple users to manage a single site.
+ You may give another person your login details so that they can manage your
+ account, but this is strongly discouraged. UTD-Hosting cannot be held
+ responsible for any action taken by any person to whom you gave your account
+ details.
+
+
+ Please also note that section 1.4 (Account ownership) of the Terms and
+ Conditions forbits the resale of any UTD-Hosting service.

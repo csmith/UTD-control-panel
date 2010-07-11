@@ -1,0 +1,31 @@
+What do KiB/MiB/GiB mean?
+
+
+ KiB, MiB and
+ GiB are all standard international units of
+ storage. Most users will be familiar with 'Kilobytes' (KB), 'Megabytes' (MB), 
+ etc; however, there is a lot of confusion about what values these represent.
+ The SI prefixes for 'K' (actually 'k'), 'M' and 'G' are all multiples of 10 &mdash; 
+ 1000, 1000000 and 1000000000, respectively. When measuring computing storing
+ capacity, however, it is often more useful to count in base 2. So the prefixes
+ are often (incorrectly) associated with powers of 2 that have a similar value:
+ A Kilobyte becomes 1024 Bytes, a Megabyte becomes 1024x a Kilobyte, etc.
+
+
+ To combat this confusion, the International Electrotechnical Commission issued
+ a new standard &mdash; K, M and G prefixes should be used in accordance with the SI
+ units, Ki, Mi and Gi should be used for 'binary' prefixes. A comparison of
+ these units is given below:
+
+
+ 
+  PrefixSI unitSize (Bytes)IEC binary unitSize (Bytes)
+ 
+ KiloKB1000KiB1024
+ MegaMB1000000MiB1048576
+ GigaGB1000000000GiB1073741824
+
+
+ All units used in the UTD-Hosting control panel use the IEC format. Units
+ on the main UTD-Hosting site (including bandwidth/hard drive limits) use SI
+ units, which is the standard for ISPs and storage manufacturers.

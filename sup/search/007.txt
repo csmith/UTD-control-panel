@@ -1,0 +1,13 @@
+What do I do if I forget my username?
+
+
+ Your utd-hosting username is included in your welcome e-mail, which you should
+ have received when your account was created. Your username is the same for
+ FTP access, this control panel, and is also forms the name for your default
+ site &mdash; http://username.utd-hosting.com/.
+
+
+ In the unlikely event that you have forgotten your username, please e-mail
+ UTD-Hosting support with as many identifying details as possible (such as
+ your real name, address/telephone number if they're on file, names of any
+ databases/database users, the names of any sites you have), but not your password.

@@ -1,0 +1,15 @@
+# Set a nice long expire header
+ExpiresDefault "access plus 10 years"
+ExpiresActive On
+ExpiresByType text/css "access plus 10 years"
+ExpiresByType application/x-javascript "access plus 10 years"
+
+# Disable E-Tags
+FileETag none
+
+SetOutputFilter DEFLATE
+
+AddType text/css .css
+AddType application/x-javascript .js
+
+AddOutputFilterByType DEFLATE text/css application/x-javascript

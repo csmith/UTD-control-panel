@@ -1,0 +1,283 @@
+body {
+  font-family: Tahoma, Arial, Sans-serif;
+  font-size: small;
+  margin: 170px 3% 5px 5%;
+  padding: 0px;
+}
+
+div#header {
+  position: absolute;
+  top: 15px;
+  left: 3%;
+  margin: 0px;
+}
+
+div#dev {
+ position: absolute;
+ top: 3px;
+ left: 0px;
+ width: 100%;
+ text-align: center;
+ font-size: 1.5em;
+}
+
+div#footer {
+ text-align: center;
+ clear: both;
+ padding-top: 15px;
+ font-size: small;
+}
+
+div#header h1 {
+  margin: 0px;
+}
+
+div#menu {
+  border: 1px solid #AAA;
+  position: absolute;
+  top: 115px;
+  left: 3%;
+  width: 94%;
+  background-color: #EEE;
+  padding: 5px;
+}
+
+div#menu a {
+  color: black;
+  text-decoration: none;
+}
+
+div#menu a:hover {
+  text-decoration: underline;
+}
+
+div#menuleft, div#menuright {
+  display: inline;
+}
+
+div#menuright {
+  position: absolute;
+  right: 0px;
+  padding-right: 6px;
+  text-align: right;
+}
+
+div.block {
+  width: 70%;
+  border: 1px solid #666;
+  padding: 0px;
+  margin-bottom: 20px;
+}
+
+div.block h2 {
+  margin: 0px;
+  background-color: #666;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 3px 7px;
+  color: #F5F5F5;
+}
+
+div.innerblock {
+  padding: 10px;
+}
+
+table.innerblock {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.innerblock th {
+  text-align: left;
+  background-color: #EEE;
+  border-bottom: 1px solid #666;
+}
+
+body table.righthead th {
+  text-align: right;	
+  background-color: #EEE;
+  border-bottom: 0px;
+  border-right: 1px solid #666;
+  padding-right: 10px;
+  width: 30%;
+}
+
+body table.bottomdiv {
+  border-bottom: 1px solid #666;
+}
+
+body table.righthead td {
+  padding-left: 10px;
+}
+
+table.innerblock td, table.innerblock th {
+  margin: 0px;
+  padding: 3px;
+}
+
+p.blurb {
+  font-style: italic;
+  margin: 0px;
+}
+
+table.form {
+  margin: 10px 0px;	
+}
+
+table.form td, table.form th {
+  padding: 3px;
+}
+
+table.leftpad {
+  margin-left: 10px;	
+}
+
+.inflat {
+  border: 1px solid #AAA;
+  padding: 3px;
+  width: 170px;
+}
+
+select.inflat {
+  width: 178px;
+}
+
+.inflaterr {
+  border: 1px solid #F00;
+  padding: 3px;
+  width: 170px;
+}
+
+div#dashboard {
+  float: right;
+  width: 25%;
+  border-left: 1px dotted #AAA;
+  padding: 5px 10px;
+}
+
+div#dashboard h2 {
+  margin: 0px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #666;
+}
+
+div#dashboard ul {
+  padding-left: 20px;
+  margin-left: 0px;
+}
+
+div#dashboard li {
+  margin: 10px 0px;
+}
+
+div#dashboard a {
+  color: #000;
+  text-decoration: none;
+}
+
+div#dashboard a:hover {
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+table tr.odd td {
+  background-color: #F3F3F3;
+}
+
+table tr:hover td {
+  background-color: #E8E8E8;	
+}
+
+table.form tr:hover td { background-color: #FFF; }
+
+td.err {
+  color: #C44;
+}
+
+em {
+  font-style: normal;
+  font-family: monospace;
+  padding: 0px 5px;
+}
+
+ol li {
+  margin: 5px;
+}
+
+p.cleartop {
+  margin-top: 10px;
+}
+
+div#message {
+ border: 2px dashed #FAA;	
+ background-color: #FEE;
+ width: 70%;
+ margin-bottom: 20px;
+}
+
+div#message div {
+ padding: 10px;	
+}
+
+table#bandwidth {
+ border: 1px solid #AAA;
+ border-collapse: collapse;
+ width: auto;
+ position: absolute;
+ top: 20px;
+ right: 3%;
+ font-size: small;
+ font-family: Tahoma, sans-serif
+}
+
+table#bandwidth th {
+ font-weight: normal;
+ padding: 3px 10px;
+ width: auto;
+}
+
+table#bandwidth td {
+ border: 0px;
+ padding: 3px 7px;
+}
+
+table#bandwidth th, table#bandwidth td {
+ border-bottom: 1px solid #AAA;	
+}
+
+div.longtext {
+ line-height: 1.5em;
+}
+
+a img { border: 0px; }
+
+div.tutbox {
+ border: 2px solid #666;
+ width: 50%;
+ background-color: #E3E3E3;
+ padding: 10px;
+}
+
+input.supportsearch {
+ width: 75%;
+}
+
+div.doublelist li {
+ padding-bottom: 1em;
+}
+
+div.change_a {
+ color: blue;
+}
+
+div.change_c {
+ color: red;
+}
