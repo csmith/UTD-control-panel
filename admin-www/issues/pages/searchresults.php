@@ -1,0 +1,173 @@
+<?PHP
+
+ $sqlSelect  = 'SELECT i.i_id, c.icat_name, i.i_title, i.i_status, u1.user_name AS i_assignee,
+ u2.user_name AS i_submitter, i.i_priority, i.i_added, i.i_deadline, i.i_updated
+ FROM issues_issues AS i
+ LEFT JOIN issues_categories AS c ON i.icat_id = c.icat_id
+ LEFT JOIN users AS u1 ON i.i_assignee = u1.user_id
+ LEFT JOIN users AS u2 ON i.i_submitter = u2.user_id
+ WHERE 1';
+
+ $sqlCount = 'SELECT COUNT(*) FROM issues_issues AS i WHERE 1';
+
+ $sql = '';
+
+ //keywords
+ if (isset($search['keywords']) && !empty($search['keywords'])) {
+   switch ($search['keywordloc']) {
+   case 'title':
+    $target = 'i_title';
+    break;
+   case 'notes':
+    $target = 'i_text';
+    break;
+   default:
+    $target = 'CONCAT(i_title,i_text)';
+  }
+  $sql .= ' AND '.$target.' LIKE \'%'.m($search['keywords']).'%\'';
+ }
+
+ //submitter
+ if ($search['submitter'] != 'any' && !empty($search['submitter'])) {
+  $sql .= ' AND i_submitter = \''.m($search['submitter']).'\'';
+ }
+
+ //assignee
+ if ($search['assignee'] != 'any' && !empty($search['assignee'])) {
+  $sql .= ' AND i_assignee = \''.m($search['assignee']).'\'';
+ }
+
+ //added
+ if ($search['added'] != 'any' && !empty($search['added'])) {
+  $sql .= ' AND i_added > '.strtotime('-1 '.$search['added']);
+ }
+
+ //updated
+ if ($search['updated'] != 'any' && !empty($search['updated'])) {
+  $sql .= ' AND i_updated > '.strtotime('-1 '.$search['updated']);
+ }
+
+ //deadline
+ if ($search['deadline'] != 'any' && !empty($search['deadline'])) {
+  $sql .= ' AND i_deadline < '.strtotime('+1 '.$search['deadline']);
+ }
+
+ //priority
+ $sql .= ' AND (0';
+ foreach ($search['priority'] as $k => $v) {
+   $sql .= ' OR i_priority = \''.m($v).'\'';
+ }
+ $sql .= ')';
+
+ //status
+ $sql .= ' AND (0';
+ foreach ($search['status'] as $k => $v) {
+   $sql .= ' OR i_status = \''.m($v).'\'';
+ }
+ $sql .= ')';
+
+ //categories
+ $sql .= ' AND (0';
+ foreach ($search['categories'] as $k => $v) {
+   $sql .= ' OR i.icat_id = '.m($v);
+ }
+ $sql .= ')';
+
+ //order
+ if (isset($search['order']) && !empty($search['order'])) {
+   switch ($search['order']) {
+   case 'added':
+    $order = 'i_added';
+    break;
+   case 'addeddesc':
+    $order = 'i_added DESC';
+    break;
+   case 'updated':
+    $order = 'i_updated';
+    break;
+   case 'updateddesc':
+    $order = 'i_updated DESC';
+    break;
+   case 'status':
+    $order = 'i_status';
+    break;
+   case 'priority':
+    $order = 'i_priority';
+    break;
+   case 'category':
+    $order = 'i_category';
+    break;
+   case 'dealine':
+    $order = 'i_deadline';
+    break;
+   case 'status':
+    $order = 'i_status';
+    break;
+   default:
+    $order = 'i_added';
+  }
+  $sql .= ' ORDER BY '.m($order);
+ }
+
+ //limit
+ if (ctype_digit(''.$search['limit'])) {
+  if ($search['limit'] > 0) {
+   $sql .= ' LIMIT 0,'.m($search['limit']);
+  }
+ }
+
+ $res = mysql_query($sqlSelect.$sql) or print(mysql_error().'<hr>'.$sqlSelect.$sql);
+ $res2 = mysql_query($sqlCount.$sql) or print(mysql_error().'<hr>'.$sqlCount.$sql);
+ $data2 = mysql_fetch_array($res2);
+?>
+<div class="block">
+ <h2><?php echo ((isset($search['title'])) ? $search['title'] : 'Search Results'); ?></h2>
+ <table class="innerblock">
+  <tr>
+   <th>ID</th>
+   <th>Category</th>
+   <th>Title</th>
+   <th>Status</th>
+   <th>Priority</th>
+   <th>Submitter</th>
+   <th>Assignee</th>
+   <th>Updated</th>
+   <th>Deadline</th>
+  </tr>
+<?PHP
+ $i = 0;
+ if (isset($res) && mysql_num_rows($res) == 0) {
+  echo '<tr><td colspan="10" style="text-align: center; font-style: italic;">';
+  echo 'No results returned</td></tr>';
+ } else {
+  while ($row = mysql_fetch_assoc($res)) {
+   $i = 1 - $i;
+   ?>
+   <tr class="<?PHP echo ($i == 1) ? 'even' : 'odd'; ?>">
+    <td><a href="<?PHP echo CP_PATH.'viewissue/'.$row['i_id']; ?>"><?PHP echo $row['i_id']; ?></a></td>
+    <td><?PHP echo h($row['icat_name']); ?></td>
+    <td><?PHP echo h($row['i_title']); ?></td>
+    <td><?PHP echo h($row['i_status']); ?></td>
+    <td><?PHP echo h($row['i_priority']); ?></td>
+    <td><?PHP echo n($row['i_submitter']); ?></td>
+    <td><?PHP echo n($row['i_assignee']); ?></td>
+    <td><?PHP echo d('Y-m-d H:i',$row['i_updated']); ?></td>
+    <td>
+     <?PHP 
+      if ($row['i_deadline'] == 0) {
+       echo '<span style="text-style: italic">None</span>';
+      } elseif ($row['i_deadline'] - time() < 0) {
+       echo '<span style="color: red">Overdue</span>';
+      } else {
+       echo duration(time()-$row['i_deadline']);
+      } 
+     ?>
+    </td>
+   </tr>
+  <?PHP
+  }
+ }
+?>
+ </table>
+ <h2>Total Results (without limit): <?php echo $data2[0]; ?></h2>
+</div>

@@ -1,0 +1,7 @@
+AuthUserFile /home/utd/.htpasswd 
+AuthName "UTD-Hosting Admin"
+AuthType Basic
+
+<Limit GET POST PUT DELETE>
+require valid-user
+</Limit>

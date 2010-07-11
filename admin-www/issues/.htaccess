@@ -1,0 +1,9 @@
+ErrorDocument 404 /issues/notfound.php
+
+Options -MultiViews
+RewriteEngine on
+
+RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+RewriteRule ^([a-z0-9]+)$ /issues/$1.php [L]
+RewriteRule ^([a-z]+)/([0-9a-z]+)$ /issues/$1.php?n=$2 [L]
+RewriteRule ^([a-z]+)/([0-9a-z]+)/([0-9a-z]+)$ /issues/$1.php?n=$2&m=$3 [L]
