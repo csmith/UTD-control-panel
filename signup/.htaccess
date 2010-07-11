@@ -1,0 +1,5 @@
+RewriteEngine On
+
+RewriteRule ^(/?signup)?/?([a-z]+)$ /signup/$2.php [L]
+RewriteRule ^(/?signup)?/?([0-9])$ /signup/index.php [L]
+RewriteRule ^(/?signup)?/?:([0-9]+)$ /signup/index.php?ref=$2 [L]
